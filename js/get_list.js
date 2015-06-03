@@ -74,10 +74,15 @@ var beerLocationPath = "http://localhost:3000/locations/"
   }
 
   function renderBeerTable(beer) {
-    $('tbody').append("<tr>" + "<td>" + beer.name + "</td>" +
+    $('#table1').append("<tr>" + "<td>" + beer.name + "</td>" +
                       "<td>" + beer.brewery + "</td>" +
                       "<td>" + beer.style + "</td>" +
-                      "<td>" + beer.abv + "</td>" + "</tr>")
+                      "<td>" + beer.abv + "</td>" +
+                      "<td>" + "<button id='beer'" + beer.id + " type='button' class='btn btn-default btn-sm'>" +
+                        "<span class='glyphicon glyphicon-remove' aria-hidden='true'>" +
+                        "</span>" +
+                        "</button>" + "</tr>")
+
   }
 
 
@@ -146,3 +151,32 @@ var beerLocationPath = "http://localhost:3000/locations/"
     console.log(location);
     $('#location-results').append("<li>" + "<ul>" + location.name + "</ul>" + "</li>")
   }
+
+
+//Search for beer on a location's page and add that to the list of beers on tap
+
+
+    function addBeerAjax(path) {
+    console.log(path)
+    $.ajax({
+      url: path,
+      type: 'GET',
+      dataType: 'json',
+    })
+    .done(function(beer) {
+      $('#add-beer-results').html("<td>" + beer.name + "</td>" +
+                      "<td>" + beer.brewery + "</td>" +
+                      "<td>" + beer.style + "</td>" +
+                      "<td>" + beer.abv + "</td>")
+    })
+    .fail(function() {
+      console.log("error");
+    })
+    .always(function() {
+      console.log("complete");
+    });
+  }
+
+  // function addMissingBeerToLocation() {
+
+  // }

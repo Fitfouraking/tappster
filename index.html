@@ -50,7 +50,7 @@
     <div id="location-results">
     </div>
 
-    <div class>
+    <div>
       <table class="table table-hover">
         <thead>
           <tr>
@@ -58,34 +58,50 @@
             <th>Brewery</th>
             <th>Style</th>
             <th>ABV</th>
+            <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="table1">
           <tr id="beers-in-location">
             <td>Beer1</td>
             <td>Brewery1</td>
             <td>Style1</td>
             <td>Example ABV</td>
+            <td><button type="button" class="btn btn-default btn-sm">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true">
+                </span>
+                </button></td>
           </tr>
         </tbody>
       </table>
 
+
       <form class="form-inline">
         <div class="form-group">
           <label for="addBeer">Something Missing?</label>
-          <input type="text" class="form-control" id="newBeerName" placeholder="Beer Name">
+          <input id="new-beer-name" type="text" class="form-control" placeholder="Beer Name">
         </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="newBreweryName" placeholder="Brewery">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="newBeerStyle" placeholder="Beer Style">
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control" id="newAbv" placeholder="ABV">
-        </div>
-        <button type="submit" class="btn btn-default">SEARCH BEER</button>
+        <button id="add-beer-input" type="submit" class="btn btn-default">SEARCH BEER</button>
       </form>
+    </div>
+
+    <div>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Brewery</th>
+            <th>Style</th>
+            <th>ABV</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="add-beer-results">
+          </tr>
+        </tbody>
+      </table>
+      <button id="add-beer-button" type="submit" class="btn btn-default">ADD BEER TO LIST</button>
     </div>
 
     <br>
