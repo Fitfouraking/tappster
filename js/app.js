@@ -1,16 +1,24 @@
 $(document).ready(function(){
   'use strict';
+$('#search-info').hide();
+$('#location-beer-list').hide();
+$('#missing-beer-table').hide();
+
 
 //Watering Hole search
   $('#bar-search-button').on("click", function() {
     $('#location-results').html('')
-    $('#table1').html('');
+    $('search-info').show();
+    $('#location-beer-list').show();
     searchLocationResults();
   })
 
 //Beer of choice search
   $('#beer-search-button').on("click", function() {
     $('#location-results').html('');
+    $('#search-info').show();
+    $('#location-beer-list').hide();
+    $('#missing-beer-table').hide();
     searchBeerResults();
   });
 
