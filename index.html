@@ -44,13 +44,15 @@
       </div>
     </div>
 
-    <div id="search-title-name">
+    <div id="search-info">
+      <div id="search-title-name">
+      </div>
+
+      <div id="location-results">
+      </div>
     </div>
 
-    <div id="location-results">
-    </div>
-
-    <div>
+    <div id="location-beer-list">
       <table class="table table-hover">
         <thead>
           <tr>
@@ -63,17 +65,13 @@
         </thead>
         <tbody id="table1">
           <tr id="beers-in-location">
-            <td>Beer1</td>
-            <td>Brewery1</td>
-            <td>Style1</td>
-            <td>Example ABV</td>
-            <td><button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-remove" aria-hidden="true">
-                </span>
-                </button></td>
           </tr>
         </tbody>
       </table>
+
+    <br>
+    <br>
+    <br>
 
 
       <form class="form-inline">
@@ -81,11 +79,11 @@
           <label for="addBeer">Something Missing?</label>
           <input id="new-beer-name" type="text" class="form-control" placeholder="Beer Name">
         </div>
-        <button id="add-beer-input" type="submit" class="btn btn-default">SEARCH BEER</button>
+        <button id="add-beer-input" type="button" class="btn btn-default">SEARCH BEER</button>
       </form>
     </div>
 
-    <div>
+    <div id="missing-beer-table">
       <table class="table table-hover">
         <thead>
           <tr>
@@ -96,12 +94,12 @@
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="table2">
           <tr id="add-beer-results">
           </tr>
         </tbody>
       </table>
-      <button id="add-beer-button" type="submit" class="btn btn-default">ADD BEER TO LIST</button>
+      <button id="add-beer-button" type="button" class="btn btn-default">ADD BEER TO LIST</button>
     </div>
 
     <br>

@@ -1,30 +1,34 @@
 $(document).ready(function(){
   'use strict';
 
+//Watering Hole search
   $('#bar-search-button').on("click", function() {
-    var barSearch = $('#bar-search-input').val()
-    var path = locationNamePath + barSearch
-    searchLocationAjax(path);
-    $('#add-beer-results').html("");
+    $('#location-results').html('')
+    $('#table1').html('');
+    searchLocationResults();
   })
 
-
+//Beer of choice search
   $('#beer-search-button').on("click", function() {
-    $('#add-beer-results').html();
-    var beerSearch = $('#beer-search-input').val()
-    var path = beerNamePath + beerSearch
-    searchBeerAjax(path);
-  })
+    $('#location-results').html('');
+    searchBeerResults();
+  });
 
+//Something Missing beer search
   $('#add-beer-input').on("click", function() {
-    $('#add-beer-results').html('');
-    var addBeer = $('#new-beer-name').val()
-    var path = beerNamePath + addBeer
-    addBeerAjax(path);
-  })
+    addBeerSearch();
+  });
 
-//   $('#add-beer-button').on("click", function() {
-//     addMissingBeerToLocation();
-//   })
+//ADD Beer to a location's list
+  $('#add-beer-button').on("click", function() {
+    saveAddedBeerToLocation();
+  });
+
+  //Remove specific beer from a location's list
+
+  $('#table1').on('click', function(event){
+    var beerID = event.target.parentElement.dataset.id;
+    removeBeerFromLocation(beerID);
+  })
 
 });
