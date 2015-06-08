@@ -3,13 +3,13 @@ var currentBeer;
 var currentLocation;
 //setting different routes to global variables
 
-var locationNamePath = "http://obscure-waters-8130.herokuapp.com/locationsname?name="
-var listLocationsPath = "http://obscure-waters-8130.herokuapp.com/listlocations/"
-var locationBeerPath = "http://obscure-waters-8130.herokuapp.com/beers/"
+var locationNamePath = "http://localhost:3000/locationsname?name="
+var listLocationsPath = "http://localhost:3000/listlocations/"
+var locationBeerPath = "http://localhost:3000/beers/"
 
-var beerNamePath = "http://obscure-waters-8130.herokuapp.com/beername?name="
-var listBeersPath = "http://obscure-waters-8130.herokuapp.com/listbeers/"
-var beerLocationPath = "http://obscure-waters-8130.herokuapp.com/locations/"
+var beerNamePath = "http://localhost:3000/beername?name="
+var listBeersPath = "http://localhost:3000/listbeers/"
+var beerLocationPath = "http://localhost:3000/locations/"
 
 //search by location input
 
@@ -35,7 +35,6 @@ var beerLocationPath = "http://obscure-waters-8130.herokuapp.com/locations/"
                         "</span>" +
                         "</button>" + "</tr>")
       });
-      $('#bar-search-input').val('');
     })
     .fail(function() {
       console.log("error");
@@ -64,7 +63,6 @@ var beerLocationPath = "http://obscure-waters-8130.herokuapp.com/locations/"
       data.locations.forEach(function(location) {
         $('#location-results').append("<li class='list-group-item' data-type=" + location.id + " id='locale'>" + location.name + "</ul>")
       });
-       $('#beer-search-input').val('');
     })
     .fail(function() {
       console.log("error");
@@ -105,7 +103,7 @@ var beerLocationPath = "http://obscure-waters-8130.herokuapp.com/locations/"
 //Actually save the beer added by user in the List table on the backend
 
   function saveAddedBeerToLocation() {
-    var path = "http://obscure-waters-8130.herokuapp.com/locations/" + currentLocation + "/addbeer?beer=" + currentBeer;
+    var path = "http://localhost:3000/locations/" + currentLocation + "/addbeer?beer=" + currentBeer;
     $.ajax({
       url: path,
       type: 'POST',
@@ -128,7 +126,7 @@ var beerLocationPath = "http://obscure-waters-8130.herokuapp.com/locations/"
 
   function removeBeerFromLocation(beerID) {
     $.ajax({
-      url: "http://obscure-waters-8130.herokuapp.com/location/" + currentLocation + "/removebeer?beer=" + beerID,
+      url: "http://localhost:3000/location/" + currentLocation + "/removebeer?beer=" + beerID,
       type: 'DELETE',
       dataType: 'json',
     })
