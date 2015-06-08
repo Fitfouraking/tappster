@@ -23,7 +23,7 @@ var beerLocationPath = "http://localhost:3000/locations/"
       dataType: 'json',
     })
     .done(function(data) {
-      $('#search-title-name').html("<h2 data-id='" + data.id + "'>"+ data.name + "</h2>");
+      $('#search-title-name').html("<h3 data-id='" + data.id + "'>"+ data.name + "</h3>");
       currentLocation = data.id
       data.beers.forEach(function(beer) {
         $('#table1').append("<tr>" + "<td>" + beer.name + "</td>" +
@@ -35,6 +35,7 @@ var beerLocationPath = "http://localhost:3000/locations/"
                         "</span>" +
                         "</button>" + "</tr>")
       });
+      $('#bar-search-input').val('');
     })
     .fail(function() {
       console.log("error");
@@ -49,7 +50,7 @@ var beerLocationPath = "http://localhost:3000/locations/"
 
 //search by beer input
 
-  function searchBeerResults(path) {
+  function searchBeerResults() {
     var beerSearch = $('#beer-search-input').val();
     var path = beerNamePath + beerSearch;
     $.ajax({
@@ -58,12 +59,12 @@ var beerLocationPath = "http://localhost:3000/locations/"
       dataType: 'json',
     })
     .done(function(data) {
-      $('#search-title-name').html("<h2>"+ data.name + "</h2>");
+      console.log(data);
+      $('#search-title-name').html("<h3>"+ data.name + "</h3>");
       data.locations.forEach(function(location) {
-        $('#location-results').append("<li>" + "<ul>" + location.name + "</ul>" + "</li>")
+        $('#location-results').append("<li class='list-group-item' data-type=" + location.id + " id='locale'>" + location.name + "</ul>")
       });
-
-       console.log(currentLocation)
+       $('#beer-search-input').val('');
     })
     .fail(function() {
       console.log("error");
@@ -104,8 +105,6 @@ var beerLocationPath = "http://localhost:3000/locations/"
 //Actually save the beer added by user in the List table on the backend
 
   function saveAddedBeerToLocation() {
-    // var newBeerId = currentBeer;
-    // var currentLocationId = currentLocation;
     var path = "http://localhost:3000/locations/" + currentLocation + "/addbeer?beer=" + currentBeer;
     $.ajax({
       url: path,
@@ -113,8 +112,7 @@ var beerLocationPath = "http://localhost:3000/locations/"
       dataType: 'json'
     })
     .done(function() {
-      // console.log("Success");
-      // $('#table2').html('');
+      $('#table2').html('');
       searchLocationResults();
     })
     .fail(function() {
@@ -145,5 +143,5 @@ var beerLocationPath = "http://localhost:3000/locations/"
     .always(function() {
       console.log("complete");
     });
-
   }
+

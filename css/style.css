@@ -1,15 +1,35 @@
-/*#search-info {
-  display: hidden;
+
+p, header, li, td, #search-title-name, #intro {
+  font-family: 'Open Sans', sans-serif;
 }
 
-#location-beer-list {
-  display: hidden;
+#intro {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
 }
 
-#missing-beer-table {
-  display: hidden;
+h4 {
+  text-align: center;
 }
-*/
 
+p {
+  text-align: center;
+  font-size: 20px;
+}
 
+h3{
+  padding-top: 5%;
+}
 
+.note {
+  font-size: 15px;
+  text-align: left;
+}
+
+li {
+  font-size: 150%%;
+}
+
+td {
+  font-size: 125%;
+}

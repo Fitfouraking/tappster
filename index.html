@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Tappster</title>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 </head>
@@ -13,16 +14,16 @@
   <div class="container">
     <header class="page-header">
       <ul class="nav nav-pills pull-right">
-        <li><a href="#">How It Works</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#about">About</a></li>
       </ul>
-      <h2>Tappster</h2>
+      <h1>Tappster</h1>
     </header>
 
     <div class="jumbotron">
       <div class="row">
         <div class="col-sm-6">
-          <h3>We help you discover what's on tap.</h3>
+          <h3 id="intro">We help you discover what's on tap.</h3>
         </div>
 
 
@@ -51,9 +52,15 @@
       <div id="search-title-name">
       </div>
 
+      <br>
+
       <div id="location-results">
+        <ul class="list-group">
+        </ul>
       </div>
     </div>
+
+    <br>
 
     <div id="location-beer-list">
       <table class="table table-hover">
@@ -84,6 +91,8 @@
         </div>
         <button id="add-beer-input" type="button" class="btn btn-default">SEARCH BEER</button>
       </form>
+      <p class="note">*If the draught list is not current or up to date, please feel free to make the proper amendments or deletions yourself. We are a crowd sourced resource -  help a fellow drinker.</p>
+      <br>
     </div>
 
     <div id="missing-beer-table">
@@ -94,7 +103,6 @@
             <th>Brewery</th>
             <th>Style</th>
             <th>ABV</th>
-            <th></th>
           </tr>
         </thead>
         <tbody id="table2">
@@ -103,32 +111,45 @@
         </tbody>
       </table>
       <button id="add-beer-button" type="button" class="btn btn-default">ADD BEER TO LIST</button>
+
+      <br>
+      <br>
+      <br>
     </div>
 
-    <br>
-    <br>
-    <br>
 
-    <div class="row">
-      <div class="col-sm-4">
-        <h4>1.) Search by location OR search for a specific beer type.</h4>
-      </div>
-      <div class="col-sm-4">
-        <h4>2.) See the current list of all draught beers at that location OR find the nearest watering hole with your drink of choice on tap.</h4>
-      </div>
-      <div class="col-sm-4">
-      <h4>3.) Drink up!</h4>
+    <div class="jumbotron" id="how-it-works">
+      <div class="row">
+        <div class="col-sm-4">
+          <h4>1.</h4>
+            <p>Search by location OR search for a specific beer type.</p>
+        </div>
+        <div class="col-sm-4">
+          <h4>2.</h4>
+            <p>See the current list of all draught beers at that location OR find the nearest establishment with your drink of choice on tap.</p>
+        </div>
+        <div class="col-sm-4">
+        <h4>3.</h4>
+          <p>Drink up and spread the love!</p>
+        </div>
       </div>
     </div>
+
+    <div class="jumbotron" id="about">
+      <p>Like all brilliant ideas, the lifeblood of Tappster came to fruition over a fresh pint of Guiness. Our mission is to make your life just a bit easier by providing you the perfect beer drinkers' tool - be it a preemptive peek at your dinner reservation's beer list to find the perfect pairing, or scouting that elusive pint of your favorite craft brew in a foreign city - Tapptser is the one stop resource for the advid beer connoisseur to the everyday barley pop adventurer. Search. Contribute. Drink. Repeat. Cheers...
+      </p>
+    </div>
+
+    <div class="modal-footer">Tappster, FitFourAKing Productions</div>
+
 
   </div>
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
 
-  <script type="text/javascript" src='js/get_list.js'></script>
+  <script type="text/javascript" src='js/beer.js'></script>
   <script type="text/javascript" src='js/app.js'></script>
 </body>
 </html>
