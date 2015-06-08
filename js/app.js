@@ -31,7 +31,6 @@ $('#missing-beer-table').hide();
 //ADD Beer to a location's list
   $('#add-beer-button').on("click", function() {
     saveAddedBeerToLocation();
-    $('#search-info').show();
   });
 
   //Remove specific beer from a location's list
