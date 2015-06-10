@@ -7,7 +7,9 @@ $('#missing-beer-table').hide();
 
 //Watering Hole search
   $('#bar-search-button').on("click", function() {
-    $('#location-results').html('')
+    $('#location-results').html('');
+    $('#missing-beer-table').hide();
+    $('#new-beer-name').val('');
     $('#search-info').show();
     $('#location-beer-list').show();
     searchLocationResults();
@@ -31,7 +33,8 @@ $('#missing-beer-table').hide();
 //ADD Beer to a location's list
   $('#add-beer-button').on("click", function() {
     saveAddedBeerToLocation();
-    $('#search-info').show();
+    $('#missing-beer-table').hide();
+    $('#new-beer-name').val('');
   });
 
   //Remove specific beer from a location's list
@@ -39,12 +42,16 @@ $('#missing-beer-table').hide();
   $('#table1').on("click", function(event){
     var beerID = event.target.parentElement.dataset.id;
     removeBeerFromLocation(beerID);
-  })
+  });
 
-  // //Click a specific Location to see its beer list
-  // $('#locale').on("click", function(event) {
-  //   var locationID = event.target.html();
-  //   renderLocationBeerList(locationID);
-  // })
+  //Click a specific Location to see its beer list
+  $('#location-results').on("click", $('#locale'), function(event) {
+    $('#location-results').show();
+    var locationID = $(event.target).attr('data-id');
+    renderLocationBeerList(locationID);
+    $('#location-results').hide();
+    $('#location-beer-list').show();
+
+  });
 
 });

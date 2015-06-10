@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tappster</title>
+  <title id="title">Tappster</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -20,7 +20,7 @@
       <h1>Tappster</h1>
     </header>
 
-    <div class="jumbotron">
+    <div class="jumbotron" id="home">
       <div class="row">
         <div class="col-sm-6">
           <h3 id="intro">We help you discover what's on tap.</h3>
@@ -29,7 +29,7 @@
 
         <div class="col-sm-6">
           <div class="input-group input-group-lg">
-            <input id="bar-search-input" type="text" class="form-control" placeholder="Watering Hole">
+            <input id="bar-search-input" onkeydown="if(event.keyCode==13)$('#bar-search-button').trigger('click');" type="text" class="form-control" placeholder="Watering Hole">
             <span class="input-group-btn">
               <button id="bar-search-button" class="btn btn-default" type="button">Search</button>
             </span>
@@ -39,7 +39,7 @@
           <br>
 
           <div class="input-group input-group-lg">
-            <input id="beer-search-input" type="text" class="form-control" placeholder="Beer Of Choice">
+            <input id="beer-search-input" onkeydown="if(event.keyCode==13)$('#beer-search-button').trigger('click');" type="text" class="form-control" placeholder="Beer Of Choice">
             <span class="input-group-btn">
               <button id="beer-search-button" class="btn btn-default" type="button">Search</button>
             </span>
@@ -54,13 +54,12 @@
 
       <br>
 
+
       <div id="location-results">
-        <ul class="list-group">
+        <ul class="list-group" id="location-address">
         </ul>
       </div>
     </div>
-
-    <br>
 
     <div id="location-beer-list">
       <table class="table table-hover">
@@ -117,6 +116,8 @@
       <br>
     </div>
 
+    <br>
+
 
     <div class="jumbotron" id="how-it-works">
       <div class="row">
@@ -135,8 +136,10 @@
       </div>
     </div>
 
+    <br>
+
     <div class="jumbotron" id="about">
-      <p>Like all brilliant ideas, the lifeblood of Tappster came to fruition over a fresh pint of Guiness. Our mission is to make your life just a bit easier by providing you the perfect beer drinkers' tool - be it a preemptive peek at your dinner reservation's beer list to find the perfect pairing, or scouting that elusive pint of your favorite craft brew in a foreign city - Tapptser is the one stop resource for the advid beer connoisseur to the everyday barley pop adventurer. Search. Contribute. Drink. Repeat. Cheers...
+      <p>Like most brilliant ideas, the lifeblood of Tappster came to fruition over a fresh pint of Guiness. Our mission is to make your life easier by providing you the perfect beer drinker's tool - be it a preemptive peek at your dinner reservation's beer list to find the perfect pairing or scouting that elusive pint of your favorite craft brew in a foreign city - Tapptser is the one stop resource for the avid beer connoisseur to the everyday barley pop adventurer. Search. Contribute. Drink. Repeat. Cheers...
       </p>
     </div>
 

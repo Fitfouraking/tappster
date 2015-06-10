@@ -1,24 +1,24 @@
-var TappsterApp = TappsterApp || {};
+// var TappsterApp = TappsterApp || {};
 
-TappsterApp.Beer = (function() {
+// TappsterApp.Beer = (function() {
 
-  $beerName = $('newBeerName'),
-  $brewery = $('newBreweryName'),
-  $beerStyle = $('newBeerStyle'),
-  $abv = $('ABV'),
-  beersURL = 'http://localhost:3000/beers';
+//   $beerName = $('newBeerName'),
+//   $brewery = $('newBreweryName'),
+//   $beerStyle = $('newBeerStyle'),
+//   $abv = $('ABV'),
+//   beersURL = 'http://localhost:3000/beers';
 
-  function Beer(name, brewery, style, abv) {
-    this.name = name;
-    this.brewery = brewery;
-    this.style = style;
-    this.abv = abv;
-  };
+//   function Beer(name, brewery, style, abv) {
+//     this.name = name;
+//     this.brewery = brewery;
+//     this.style = style;
+//     this.abv = abv;
+//   };
 
-  Beer.create = function(){
-    var beerData =
-  }
+//   Beer.create = function(){
+//     var beerData =
+//   }
 
 
 
-})
+// })

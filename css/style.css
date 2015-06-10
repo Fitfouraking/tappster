@@ -1,7 +1,12 @@
 
-p, header, li, td, #search-title-name, #intro {
+p, li, td, #search-title-name, #intro {
   font-family: 'Open Sans', sans-serif;
+ /* color: white;*/
 }
+
+/*.jumbotron {
+  background-color: coral !important;
+}*/
 
 #intro {
   font-family: 'Open Sans', sans-serif;
