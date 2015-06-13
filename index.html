@@ -85,8 +85,8 @@
 
       <form class="form-inline">
         <div class="form-group">
-          <label for="addBeer">Something Missing?</label>
-          <input id="new-beer-name" type="text" class="form-control" placeholder="Beer Name">
+          <label>Something Missing?</label>
+          <input id="new-beer-name" onkeydown="if(event.keyCode==13)$('#add-beer-input').trigger('click');" type="text" class="form-control" placeholder="Beer Name">
         </div>
         <button id="add-beer-input" type="button" class="btn btn-default">SEARCH BEER</button>
       </form>

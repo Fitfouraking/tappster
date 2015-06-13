@@ -8,6 +8,11 @@ p, li, td, #search-title-name, #intro {
   background-color: coral !important;
 }*/
 
+.western {
+  background-image: url(../image/western.jpg);
+  height: 200px;
+}
+
 #intro {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
