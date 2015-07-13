@@ -4,7 +4,6 @@ $(document).ready(function() {
   $('#location-beer-list').hide();
   $('#missing-beer-table').hide();
 
-
   //Watering Hole search
   $('#bar-search-button').on("click", function() {
     $('#location-results').html('');
@@ -25,11 +24,10 @@ $(document).ready(function() {
   });
 
   //Something Missing beer search
-  $('#add-beer-input').on("click", function() {
+  $('#missing-beer-button').on("click", function() {
     $('#add-beer-results').html('');
     addBeerSearch();
     $('#missing-beer-table').show();
-
   });
 
   //ADD Beer to a location's list
@@ -40,7 +38,6 @@ $(document).ready(function() {
   });
 
   //Remove specific beer from a location's list
-
   $('#table1').on("click", function(event) {
     var beerID = event.target.parentElement.dataset.id;
     removeBeerFromLocation(beerID);
@@ -53,6 +50,5 @@ $(document).ready(function() {
     renderLocationBeerList(locationID);
     $('#location-results').hide();
     $('#location-beer-list').show();
-
   });
 });
