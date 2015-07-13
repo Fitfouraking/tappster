@@ -1,12 +1,53 @@
 
-p, header, li, td, #search-title-name, #intro {
+p, li, td, #search-title-name, #intro {
   font-family: 'Open Sans', sans-serif;
+}
+
+#home {
+  background-image: url(../image/bar.jpg);
+  min-height: 100%;
+  background-size: cover;
+  height: 450px;
+}
+
+.col-xs-5 {
+  margin-top: 12%;
+}
+
+#how-it-works {
+  height: 250px;
+}
+
+.col-xs-4 {
+  margin-top: 6%;
+  margin-bottom: 4%;
 }
 
 #intro {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  color: white;
 }
+
+#about {
+  background-image: url(../image/western.jpg);
+  min-height: 100%;
+  background-size: cover;
+  height: auto;
+}
+
+.about {
+  color: white;
+  margin-bottom: 10%;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+.list-group-item {
+  color: blue;
+  text-decoration: underline;
+}
+
 
 h4 {
   text-align: center;
@@ -30,6 +71,14 @@ li {
   font-size: 150%%;
 }
 
+.navlink {
+  font-size: 100%;
+}
+
 td {
   font-size: 125%;
+}
+
+.fa-3x {
+  text-align: center;
 }

@@ -18,4 +18,4 @@ Objective: Make a full stack app that shows users the draught beer list at a res
 Ultimately my goals are to tie in the BeerDB & Yelp API's to expand the user search capabilities (Yelp has location integration so that search results can be sorted by closest to user). Also, I want a user that searches by beer to be able to click on a specific location in that list to see the draught list (rather than having to go to the top and research that location). By adding user authentication down the road, I will enable users to add certain bars or beers to their "favorites" or "watchlist". This would also allow certain locations to privatize their accounts by becoming an admin (rather than having users manipulate their draught list).
 
 ###Backend Github Repo
-https://github.com/Fitfouraking/project_2_frontend
+https://github.com/Fitfouraking/tappster_backend

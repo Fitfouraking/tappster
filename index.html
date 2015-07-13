@@ -4,42 +4,46 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Tappster</title>
+  <title id="title">Tappster</title>
   <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
-
 <body>
-  <div class="container">
-    <header class="page-header">
-      <ul class="nav nav-pills pull-right">
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-      <h1>Tappster</h1>
-    </header>
 
-    <div class="jumbotron">
-      <div class="row">
-        <div class="col-sm-6">
-          <h3 id="intro">We help you discover what's on tap.</h3>
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#home"><i class="fa fa-beer"></i> TAPPSTER</a>
         </div>
+        <div>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="navlink"><a href="#how-it-works">How It Works</a></li>
+            <li class="navlink"><a href="#about">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
 
-        <div class="col-sm-6">
+
+    <div id="home">
+      <div class="row">
+        <div class="col-xs-5 col-xs-offset-1">
+          <h2 id="intro">We help you discover what's on tap.</h2>
+        </div>
+        <div class="col-xs-5">
           <div class="input-group input-group-lg">
-            <input id="bar-search-input" type="text" class="form-control" placeholder="Watering Hole">
+            <input id="bar-search-input" onkeydown="if(event.keyCode==13)$('#bar-search-button').trigger('click');" type="text" class="form-control" placeholder="Boston Watering Hole">
             <span class="input-group-btn">
               <button id="bar-search-button" class="btn btn-default" type="button">Search</button>
             </span>
           </div>
-
           <br>
           <br>
-
           <div class="input-group input-group-lg">
-            <input id="beer-search-input" type="text" class="form-control" placeholder="Beer Of Choice">
+            <input id="beer-search-input" onkeydown="if(event.keyCode==13)$('#beer-search-button').trigger('click');" type="text" class="form-control" placeholder="Beer Of Choice">
             <span class="input-group-btn">
               <button id="beer-search-button" class="btn btn-default" type="button">Search</button>
             </span>
@@ -48,19 +52,19 @@
       </div>
     </div>
 
+  <div class="container">
+
+
     <div id="search-info">
       <div id="search-title-name">
       </div>
-
       <br>
-
       <div id="location-results">
-        <ul class="list-group">
+        <ul class="list-group" id="location-address">
         </ul>
       </div>
     </div>
 
-    <br>
 
     <div id="location-beer-list">
       <table class="table table-hover">
@@ -78,22 +82,19 @@
           </tr>
         </tbody>
       </table>
-
-    <br>
-    <br>
-    <br>
-
-
-      <form class="form-inline">
+      <br>
+      <br>
+      <div>
         <div class="form-group">
-          <label for="addBeer">Something Missing?</label>
-          <input id="new-beer-name" type="text" class="form-control" placeholder="Beer Name">
+          <label>Something Missing?</label>
+          <input id="new-beer-name" onkeydown="if(event.keyCode==13)$('#missing-beer-button').trigger('click');" type="text" class="form-control" placeholder="Beer Name">
         </div>
-        <button id="add-beer-input" type="button" class="btn btn-default">SEARCH BEER</button>
-      </form>
+        <button id="missing-beer-button" type="button" class="btn btn-default">SEARCH BEER</button>
+      </div>
       <p class="note">*If the draught list is not current or up to date, please feel free to make the proper amendments or deletions yourself. We are a crowd sourced resource -  help a fellow drinker.</p>
       <br>
     </div>
+
 
     <div id="missing-beer-table">
       <table class="table table-hover">
@@ -111,39 +112,47 @@
         </tbody>
       </table>
       <button id="add-beer-button" type="button" class="btn btn-default">ADD BEER TO LIST</button>
-
       <br>
       <br>
       <br>
     </div>
+    <br>
 
 
-    <div class="jumbotron" id="how-it-works">
+    <div id="how-it-works">
       <div class="row">
-        <div class="col-sm-4">
-          <h4>1.</h4>
-            <p>Search by location OR search for a specific beer type.</p>
+        <div class="col-xs-4">
+          <p><i class="fa fa-search-plus"></i> Search by location OR search for a specific beer type.</p>
         </div>
-        <div class="col-sm-4">
-          <h4>2.</h4>
-            <p>See the current list of all draught beers at that location OR find the nearest establishment with your drink of choice on tap.</p>
+        <div class="col-xs-4">
+          <p><i class="fa fa-list-ol"></i> See the current list of all draught beers at that location OR find the nearest establishment with your drink of choice on tap.</p>
         </div>
-        <div class="col-sm-4">
-        <h4>3.</h4>
-          <p>Drink up and spread the love!</p>
+        <div class="col-xs-4">
+          <p><i class="fa fa-beer"></i> Drink up and spread the love!</p>
+        </div>
+      </div>
+    </div>
+    <br>
+
+  </div>
+
+
+    <div id="about">
+      <div class="row">
+        <div class="col-sm-5">
+          <p class="about">Like most brilliant ideas, the lifeblood of Tappster came to fruition over a fresh pint of Guiness. Our mission is to make your life easier by providing you the perfect beer drinker's tool - be it a preemptive peek at your dinner reservation's beer list to find the perfect pairing or scouting that elusive pint of your favorite craft brew in a foreign city - Tapptser is the one stop resource for the avid beer connoisseur to the everyday barley pop adventurer. Search. Contribute. Drink. Repeat. Cheers...
+          </p>
         </div>
       </div>
     </div>
 
-    <div class="jumbotron" id="about">
-      <p>Like all brilliant ideas, the lifeblood of Tappster came to fruition over a fresh pint of Guiness. Our mission is to make your life just a bit easier by providing you the perfect beer drinkers' tool - be it a preemptive peek at your dinner reservation's beer list to find the perfect pairing, or scouting that elusive pint of your favorite craft brew in a foreign city - Tapptser is the one stop resource for the advid beer connoisseur to the everyday barley pop adventurer. Search. Contribute. Drink. Repeat. Cheers...
-      </p>
+    <div class="footer">
+      <div class="container">
+        <div>Tappster, FitFourAKing Productions. Produced for General Assembly's WDI.</div>
+      </div>
     </div>
 
-    <div class="modal-footer">Tappster, FitFourAKing Productions</div>
 
-
-  </div>
 
   <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
